@@ -60,6 +60,8 @@ var TextConditions = []Condition{
 	{Scope: GLOBAL, Type: DUAL, Data: IP_DUAL},
 	{Scope: GLOBAL, Type: STELLAR, Data: IP_DUAL_ST_CORP},
 	{Scope: GLOBAL, Type: STELLAR, Data: IP_DUAL_ST_CORP},
+	{Scope: STELLAR, Type: ORION, Data: IP_DUAL_ST_CORP_ORION},
+	{Scope: ORION, Type: STELLAR, Data: IP_DUAL_ST_CORP_ORION},
 }
 
 var JSONConditions []JSONCondition = []JSONCondition{

@@ -70,3 +70,5 @@ var IP_DUAL types.List = Merge(IP4_ALL, IP6_ALL)
 var IP_DUAL_ST_CORP types.List = Merge(IP4_ST_CORP, IP6_ST_CORP)
 
 var IP_DUAL_ST_ORION types.List = Merge(IP4_ST_ORION, IP6_ST_ORION)
+
+var IP_DUAL_ST_CORP_ORION types.List = Merge(IP4_ST_CORP, IP6_ST_CORP, IP4_ST_ORION, IP6_ST_ORION)
