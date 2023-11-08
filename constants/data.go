@@ -22,6 +22,7 @@ var IP4_ST_CORP types.List = types.List{
 	"199.34.92.144/29",
 	"199.34.94.120/30",
 	"216.250.230.192/30",
+	"216.250.231.64/29",
 }
 
 var IP6_ST_CORP types.List = types.List{
@@ -29,18 +30,21 @@ var IP6_ST_CORP types.List = types.List{
 	"2604:c0c0:1828::/48",
 	"2604:c0c0:3001::/48",
 	"2604:c0c0:500e::/48",
+	"2604:c0c0:800e::/48",
 }
 
 var IP4_ST_ORION types.List = types.List{
 	"199.34.92.64/26",
 	"199.34.94.32/27",
-	"216.250.230.16/28",
+	"216.250.230.0/27",
+	"216.250.231.0/27",
 }
 
 var IP6_ST_ORION types.List = types.List{
 	"2604:c0c0:15af::/48",
 	"2604:c0c0:35af::/48",
 	"2604:c0c0:55af::/48",
+	"2604:c0c0:85af::/48",
 }
 
 var DOMAINS_ST_CORP = types.List{
