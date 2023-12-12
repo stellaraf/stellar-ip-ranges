@@ -14,9 +14,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 	app.Use(middleware.Recover())
 	app.Use(middleware.Gzip())
-	app.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"*"},
-	}))
+	app.Use(middleware.CORS())
 
 	app.GET("/*", lib.BaseHandler)
 
