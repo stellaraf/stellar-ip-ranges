@@ -8,6 +8,7 @@ import (
 )
 
 func BaseHandler(ctx echo.Context) error {
+	ctx.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
 	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
 	if utils.SliceContains(params, "json") {
 		return JSONHandler(ctx)
