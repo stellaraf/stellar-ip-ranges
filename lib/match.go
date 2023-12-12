@@ -43,6 +43,15 @@ func FilterScopes(params []string) ScopeManager {
 	v6 := false
 	dual := true
 	url := false
+	if utils.SliceContains(params, "json") {
+		if (!utils.SliceContains(params, constants.IP4) && !utils.SliceContains(params, constants.IP6)) || len(params) == 1 {
+			return ScopeManager{
+				Dual: true,
+				URL:  true,
+			}
+		}
+
+	}
 	if utils.SliceContains(params, constants.IP4) {
 		v4 = true
 		dual = false
