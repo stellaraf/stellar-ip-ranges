@@ -1,53 +1,34 @@
 package lib
 
 import (
-	"errors"
+	"strings"
 
-	"github.com/gofiber/fiber/v2"
-	"github.com/stellaraf/stellar-ip-ranges/constants"
+	"github.com/labstack/echo/v4"
+	"github.com/stellaraf/go-utils"
 )
 
-var ErrUnknownTypeOrScope = errors.New("unknown type and/or scope")
-
-func MatchText(scope, _type string) ([]byte, error) {
-	for _, c := range constants.TextConditions {
-		if c.Match(scope, _type) {
-			return c.Data.Text(), nil
-		}
+func BaseHandler(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	if utils.SliceContains(params, "json") {
+		return JSONHandler(ctx)
 	}
-	return nil, ErrUnknownTypeOrScope
+	return TextHandler(ctx)
 }
 
-func MatchJSON(scope, _type string) (fiber.Map, error) {
-	for _, c := range constants.JSONConditions {
-		if c.Match(scope, _type) {
-			return c.Response, nil
-		}
+func TextHandler(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	res := MatchText(params)
+	if res == "" {
+		return ctx.String(400, "no matching parameters")
 	}
-	return nil, ErrUnknownTypeOrScope
+	return ctx.String(200, res)
 }
 
-func TextHandler(ctx *fiber.Ctx) error {
-	scope := ctx.Params("scope", "global")
-	_type := ctx.Params("type", "dual")
-	ctx.Set("content-type", "text/plain")
-	ctx.Status(200)
-
-	res, err := MatchText(scope, _type)
-	if err != nil {
-		return ctx.Status(400).Send([]byte(err.Error()))
+func JSONHandler(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	res := MatchJSON(params)
+	if res == nil {
+		return ctx.JSON(400, map[string]string{"error": "no matching parameters"})
 	}
-	return ctx.Send(res)
-
-}
-
-func JSONHandler(ctx *fiber.Ctx) error {
-	scope := ctx.Params("scope", "global")
-	_type := ctx.Params("type", "dual")
-	ctx.Status(200)
-	res, err := MatchJSON(scope, _type)
-	if err != nil {
-		return ctx.Status(400).JSON(fiber.Map{"error": err.Error()})
-	}
-	return ctx.JSON(res)
+	return ctx.JSON(200, res)
 }
