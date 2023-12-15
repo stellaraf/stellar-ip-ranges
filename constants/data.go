@@ -13,6 +13,7 @@ func Merge(init types.List, rest ...types.List) types.List {
 var IP4_ALL types.List = types.List{
 	"199.34.92.0/22",
 	"216.250.230.0/23",
+	"64.22.120.0/23",
 }
 var IP6_ALL types.List = types.List{
 	"2604:c0c0::/32",
