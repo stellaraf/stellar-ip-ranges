@@ -1,11 +1,11 @@
-module github.com/stellaraf/stellar-ip-ranges
+module go.stellar.af/stellar-ip-ranges
 
 go 1.20
 
 require (
 	github.com/labstack/echo/v4 v4.11.3
-	github.com/stellaraf/go-utils v0.1.3
 	github.com/stretchr/testify v1.8.4
+	go.stellar.af/go-utils v0.2.7
 )
 
 require (

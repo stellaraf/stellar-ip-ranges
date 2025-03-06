@@ -4,13 +4,13 @@ import (
 	"strings"
 
 	"github.com/labstack/echo/v4"
-	"github.com/stellaraf/go-utils"
+	"go.stellar.af/go-utils/slice"
 )
 
 func BaseHandler(ctx echo.Context) error {
 	ctx.Response().Header().Set(echo.HeaderAccessControlAllowOrigin, "*")
 	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
-	if utils.SliceContains(params, "json") {
+	if slice.Contains(params, "json") {
 		return JSONHandler(ctx)
 	}
 	return TextHandler(ctx)

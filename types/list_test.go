@@ -3,8 +3,8 @@ package types_test
 import (
 	"testing"
 
-	"github.com/stellaraf/stellar-ip-ranges/types"
 	"github.com/stretchr/testify/assert"
+	"go.stellar.af/stellar-ip-ranges/types"
 )
 
 func Test_List(t *testing.T) {
@@ -20,6 +20,6 @@ func Test_List(t *testing.T) {
 192.0.2.3
 192.0.2.4`)
 		result := list.Text()
-		assert.Equal(t, expected, result)
+		assert.Equal(t, string(expected), result)
 	})
 }

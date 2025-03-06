@@ -5,7 +5,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/stellaraf/stellar-ip-ranges/lib"
+	"go.stellar.af/stellar-ip-ranges/lib"
 )
 
 func Handler(w http.ResponseWriter, r *http.Request) {
