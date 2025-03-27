@@ -20,6 +20,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAccessControlAllowOrigin},
 	}))
 
+	app.GET("/geofeed*", lib.GeofeedHandler)
+
 	app.GET("/*", lib.BaseHandler)
 
 	app.ServeHTTP(w, r)
