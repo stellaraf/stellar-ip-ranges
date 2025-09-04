@@ -55,3 +55,29 @@ func GeofeedHandler(ctx echo.Context) error {
 	}
 	return ctx.String(200, csv)
 }
+
+func CrowdstrikeHandler(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	if slice.Contains(params, "json") {
+		return CrowdstrikeJSON(ctx)
+	}
+	return CrowdstrikeText(ctx)
+}
+
+func CrowdstrikeText(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	res := MatchCrowdstrikeText(params) 
+	if res == "" {
+		return ctx.String(400, "no matching parameters")
+	}
+	return ctx.String(200, res)
+}
+
+func CrowdstrikeJSON(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	res := MatchCrowdstrikeJSON(params) 
+	if res == nil {
+		return ctx.JSON(400, map[string]string{"error": "no matching parameters"})
+	}
+	return ctx.JSON(200, res)
+}

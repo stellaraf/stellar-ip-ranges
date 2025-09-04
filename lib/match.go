@@ -208,3 +208,57 @@ func MatchJSON(params []string) Data {
 	}
 	return out
 }
+
+
+
+func MatchCrowdstrikeText(params []string) string {
+	s := FilterScopes(params)
+	matched := []types.List{}
+	if s.URL {
+		if len(s.Scopes) == 0 {
+			matched = append(matched, constants.CS_DOMAINS)
+		}
+	}
+
+	// IPv4
+	if s.IPv4 {
+		matched = append(matched, constants.CS_IP4)
+	}
+
+	// IPv6
+	if s.IPv6 {
+		matched = append(matched, constants.CS_IP6)
+	}
+
+	// Dual (both)
+	if s.Dual {
+		matched = append(matched, constants.CS_IP4, constants.CS_IP6)
+	}
+
+	merged := constants.Merge(types.List{}, matched...)
+	return merged.Text()
+}
+
+func MatchCrowdstrikeJSON(params []string) Data {
+	s := FilterScopes(params)
+	out := Data{}
+
+	if s.URL {
+		out[constants.URL] = constants.CS_DOMAINS
+	}
+	if s.IPv4 {
+		out[constants.IP4] = constants.CS_IP4
+	}
+	if s.IPv6 {
+		out[constants.IP6] = constants.CS_IP6
+	}
+	if s.Dual {
+		out[constants.IP4] = constants.CS_IP4
+		out[constants.IP6] = constants.CS_IP6
+	}
+
+	if len(out) == 0 {
+		return nil
+	}
+	return out
+}
