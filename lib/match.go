@@ -232,7 +232,7 @@ func MatchCrowdstrikeText(params []string) string {
 
 	// Dual (both)
 	if s.Dual {
-		matched = append(matched, constants.CS_IP4, constants.CS_IP6, constants.CS_DOMAINS)
+		matched = append(matched, constants.CS_IP4, constants.CS_IP6)
 	}
 
 	merged := constants.Merge(types.List{}, matched...)

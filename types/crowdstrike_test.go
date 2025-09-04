@@ -66,7 +66,7 @@ func Test_MatchCrowdstrikeText_URL(t *testing.T) {
 
 func Test_MatchCrowdstrikeText_Dual(t *testing.T) {
 	// Dual == IPv4 + IPv6 joined with newlines
-	expected := constants.CS_IP4.Text() + "\n" + constants.CS_IP6.Text() + "\n" +  constants.CS_DOMAINS.Text()
+	expected := constants.CS_IP4.Text() + "\n" + constants.CS_IP6.Text()
 	out := lib.MatchCrowdstrikeText([]string{"dual"})
 	assert.Equal(t, expected, out)
 }
