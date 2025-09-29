@@ -20,6 +20,8 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept, echo.HeaderAccessControlAllowOrigin},
 	}))
 
+	app.GET("/rapid7*", lib.Rapid7Handler)
+
 	app.GET("/crowdstrike*", lib.CrowdstrikeHandler)
 
 	app.GET("/geofeed*", lib.GeofeedHandler)

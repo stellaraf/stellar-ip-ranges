@@ -81,3 +81,30 @@ func CrowdstrikeJSON(ctx echo.Context) error {
 	}
 	return ctx.JSON(200, res)
 }
+
+
+func Rapid7Handler(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	if slice.Contains(params, "json") {
+		return Rapid7JSON(ctx)
+	}
+	return Rapid7Text(ctx)
+}
+
+func Rapid7Text(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	res := MatchRapid7Text(params) 
+	if res == "" {
+		return ctx.String(400, "no matching parameters")
+	}
+	return ctx.String(200, res)
+}
+
+func Rapid7JSON(ctx echo.Context) error {
+	params := strings.Split(strings.Join(ctx.ParamValues(), "/"), "/")
+	res := MatchRapid7JSON(params) 
+	if res == nil {
+		return ctx.JSON(400, map[string]string{"error": "no matching parameters"})
+	}
+	return ctx.JSON(200, res)
+}
