@@ -21,9 +21,8 @@ func (g *GeofeedEntry) CSV() string {
 		g.City,
 		g.PostalCode,
 	)
-	comment := fmt.Sprintf("# %s", g.Name)
-	return fmt.Sprintf(`%s
-%s`, comment, data)
+	//comment := fmt.Sprintf("# %s", g.Name)
+	return fmt.Sprintf(`%s`, data)
 }
 
 func (g Geofeed) CSV(title string) string {

@@ -3,24 +3,24 @@ package constants
 import "go.stellar.af/stellar-ip-ranges/types"
 
 var GEOFEED = types.Geofeed{
+	// types.GeofeedEntry{
+	// 	Name:        "Orion IPv4 Aggregate",
+	// 	Prefix:      "199.34.92.0/22",
+	// 	CountryCode: "US",
+	// 	RegionCode:  "US-AZ",
+	// 	City:        "Phoenix",
+	// 	PostalCode:  "85004",
+	// },
+	// types.GeofeedEntry{
+	// 	Name:        "Orion IPv4 Aggregate",
+	// 	Prefix:      "216.250.230.0/23",
+	// 	CountryCode: "US",
+	// 	RegionCode:  "US-AZ",
+	// 	City:        "Phoenix",
+	// 	PostalCode:  "85004",
+	// },
 	types.GeofeedEntry{
-		Name:        "Orion IPv4 Aggregate",
-		Prefix:      "199.34.92.0/22",
-		CountryCode: "US",
-		RegionCode:  "US-AZ",
-		City:        "Phoenix",
-		PostalCode:  "85004",
-	},
-	types.GeofeedEntry{
-		Name:        "Orion IPv4 Aggregate",
-		Prefix:      "216.250.230.0/23",
-		CountryCode: "US",
-		RegionCode:  "US-AZ",
-		City:        "Phoenix",
-		PostalCode:  "85004",
-	},
-	types.GeofeedEntry{
-		Name:        "Orion PHX01 IPv4",
+		//Name:        "Orion PHX01 IPv4",
 		Prefix:      "64.22.120.0/23",
 		CountryCode: "US",
 		RegionCode:  "US-AZ",
@@ -28,7 +28,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "85004",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion IPv6 Aggregate",
+		//Name:        "Orion IPv6 Aggregate",
 		Prefix:      "2604:c0c0::/32",
 		CountryCode: "US",
 		RegionCode:  "US-AZ",
@@ -36,7 +36,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "85004",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion PHX01 IPv4",
+		//Name:        "Orion PHX01 IPv4",
 		Prefix:      "199.34.92.0/23",
 		CountryCode: "US",
 		RegionCode:  "US-AZ",
@@ -44,7 +44,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "85004",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion HNL01 IPv4",
+		//Name:        "Orion HNL01 IPv4",
 		Prefix:      "199.34.94.0/23",
 		CountryCode: "US",
 		RegionCode:  "US-HI",
@@ -52,7 +52,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "96819",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion CHI01 IPv4",
+		//Name:        "Orion CHI01 IPv4",
 		Prefix:      "216.250.230.0/24",
 		CountryCode: "US",
 		RegionCode:  "IS-IL",
@@ -60,7 +60,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "60608",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion GVL01 IPv4",
+		//Name:        "Orion GVL01 IPv4",
 		Prefix:      "216.250.231.0/24",
 		CountryCode: "US",
 		RegionCode:  "US-SC",
@@ -68,7 +68,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "29607",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion PHX01 IPv6",
+		//Name:        "Orion PHX01 IPv6",
 		Prefix:      "2604:c0c0:1000::/36",
 		CountryCode: "US",
 		RegionCode:  "US-AZ",
@@ -76,7 +76,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "85004",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion HNL01 IPv6",
+		//Name:        "Orion HNL01 IPv6",
 		Prefix:      "2604:c0c0:3000::/36",
 		CountryCode: "US",
 		RegionCode:  "US-HI",
@@ -84,7 +84,7 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "96819",
 	},
 	types.GeofeedEntry{
-		Name:        "Orion GVL01 IPv6",
+		//Name:        "Orion GVL01 IPv6",
 		Prefix:      "2604:c0c0:8000::/36",
 		CountryCode: "US",
 		RegionCode:  "US-SC",

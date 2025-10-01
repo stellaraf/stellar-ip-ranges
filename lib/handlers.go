@@ -42,7 +42,7 @@ func GeofeedHandler(ctx echo.Context) error {
 	if sha != "" {
 		title += " " + sha
 	}
-	title += "\n# Append .txt or .csv to download as a file in the respective format."
+	//title += "\n# Append .txt or .csv to download as a file in the respective format."
 	csv := constants.GEOFEED.CSV(title)
 	path := ctx.Request().URL.Path
 	if strings.HasSuffix(path, ".csv") {
