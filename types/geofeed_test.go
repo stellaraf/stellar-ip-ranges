@@ -42,9 +42,8 @@ func Test_Geofeed(t *testing.T) {
 		PostalCode:  "85004",
 	}
 	g := types.Geofeed{e1, e2}
-	result := g.CSV("AS14525 Geofeed")
-	exp := `# AS14525 Geofeed
-216.250.231.0/24,US,SC,Greenville,29607,
+	result := g.CSV()
+	exp := `216.250.231.0/24,US,SC,Greenville,29607,
 2604:c0c0:1000::/36,US,AZ,Phoenix,85004,
 `
 

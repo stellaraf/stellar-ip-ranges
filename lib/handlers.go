@@ -1,7 +1,6 @@
 package lib
 
 import (
-	"os"
 	"strings"
 
 	"github.com/labstack/echo/v4"
@@ -37,13 +36,8 @@ func JSONHandler(ctx echo.Context) error {
 }
 
 func GeofeedHandler(ctx echo.Context) error {
-	title := "AS14525 Geofeed"
-	sha := os.Getenv("VERCEL_GIT_COMMIT_SHA")
-	if sha != "" {
-		title += " " + sha
-	}
 	//title += "\n# Append .txt or .csv to download as a file in the respective format."
-	csv := constants.GEOFEED.CSV(title)
+	csv := constants.GEOFEED.CSV()
 	path := ctx.Request().URL.Path
 	if strings.HasSuffix(path, ".csv") {
 		ctx.Response().Header().Set(echo.HeaderContentDisposition, "attachment; filename=stellar-geofeed.csv")

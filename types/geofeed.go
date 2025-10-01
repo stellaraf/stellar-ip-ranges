@@ -25,8 +25,8 @@ func (g *GeofeedEntry) CSV() string {
 	return fmt.Sprintf(`%s`, data)
 }
 
-func (g Geofeed) CSV(title string) string {
-	data := fmt.Sprintf("# %s\n", title)
+func (g Geofeed) CSV() string {
+	data := ""
 	for _, e := range g {
 		data += e.CSV()
 		data += "\n"
