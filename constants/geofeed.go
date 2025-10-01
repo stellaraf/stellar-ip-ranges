@@ -55,9 +55,9 @@ var GEOFEED = types.Geofeed{
 		//Name:        "Orion CHI01 IPv4",
 		Prefix:      "216.250.230.0/24",
 		CountryCode: "US",
-		RegionCode:  "US-IL",
-		City:        "Chicago",
-		PostalCode:  "60608",
+		RegionCode:  "US-SC",
+		City:        "Greenville",
+		PostalCode:  "29607",
 	},
 	types.GeofeedEntry{
 		//Name:        "Orion GVL01 IPv4",
