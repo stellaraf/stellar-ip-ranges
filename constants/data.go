@@ -15,6 +15,7 @@ var IP4_ALL types.List = types.List{
 	"216.250.230.0/23",
 	"64.22.120.0/23",
 	"20.102.10.97/32",
+	"198.22.224.0/24",
 }
 var IP6_ALL types.List = types.List{
 	"2604:c0c0::/32",

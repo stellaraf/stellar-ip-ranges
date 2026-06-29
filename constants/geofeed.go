@@ -52,6 +52,14 @@ var GEOFEED = types.Geofeed{
 		PostalCode:  "96819",
 	},
 	types.GeofeedEntry{
+		//Name:        "Orion HNL01 IPv4",
+		Prefix:      "198.22.224.0/24",
+		CountryCode: "US",
+		RegionCode:  "US-HI",
+		City:        "Honolulu",
+		PostalCode:  "96819",
+	},
+	types.GeofeedEntry{
 		//Name:        "Orion CHI01 IPv4",
 		Prefix:      "216.250.230.0/24",
 		CountryCode: "US",
